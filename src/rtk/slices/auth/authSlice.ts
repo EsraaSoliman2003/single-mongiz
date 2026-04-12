@@ -34,7 +34,15 @@ const initialState: AuthState = {
 export const registerUser = createAsyncThunk<
   AuthResponse,
   FormData,
-  { rejectValue: { title: string; errors?: Record<string, string[]> } }
+  {
+    rejectValue: {
+      title: string;
+      errors?: Record<string, string[]>;
+      extra?: {
+        isDeleted?: boolean;
+      };
+    };
+  }
 >("auth/register", async (formData, thunkAPI) => {
   try {
     const res = await axios.post("Account/register", formData, {
@@ -46,6 +54,7 @@ export const registerUser = createAsyncThunk<
       return thunkAPI.rejectWithValue({
         title: err.response?.data?.title || "Register failed",
         errors: err.response?.data?.errors,
+        extra: err.response?.data?.extra,
       });
     }
     return thunkAPI.rejectWithValue({
@@ -153,10 +162,10 @@ export const recoverAccount = createAsyncThunk(
       return res.data;
     } catch (err: any) {
       return thunkAPI.rejectWithValue(
-        err.response?.data || { message: "Recovery failed" }
+        err.response?.data || { message: "Recovery failed" },
       );
     }
-  }
+  },
 );
 /* ===========================
    Slice

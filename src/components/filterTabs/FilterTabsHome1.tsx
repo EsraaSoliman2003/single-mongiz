@@ -46,7 +46,7 @@ const FilterTabs = () => {
   return (
     <div className="w-full my-5 overflow-hidden">
       <div className="container flex flex-wrap md:flex-nowrap items-center py-4">
-        <h2 className="text-lg font-bold text-gray-900 whitespace-nowrap w-full md:w-2/5 mb-2 md:mb-0">
+        <h2 className="text-lg font-bold text-gray-900 whitespace-nowrap w-full md:w-2/5 mb-2 md:mb-0 text-center md:text-start">
           {loadingCategory ? (
             <div className="h-5 w-32 bg-gray-300 animate-pulse rounded-md" />
           ) : (

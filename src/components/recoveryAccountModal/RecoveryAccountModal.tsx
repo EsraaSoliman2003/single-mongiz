@@ -1,11 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
-import { X, Mail, Loader2 } from "lucide-react";
+import { X, Mail, MailCheck, AlertTriangle } from "lucide-react";
 import MainButton from "../MainButton/MainButton";
 import { useAppDispatch } from "@/rtk/hooks";
 import { recoverAccount } from "@/rtk/slices/auth/authSlice";
 import { toast } from "sonner";
+import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 interface Props {
   open: boolean;
@@ -19,6 +21,7 @@ export default function RecoveryAccountModal({
   email,
 }: Props) {
   const dispatch = useAppDispatch();
+  const t = useTranslations();
 
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -27,7 +30,7 @@ export default function RecoveryAccountModal({
 
   const handleRecover = async () => {
     if (!email) {
-      toast.error("Email not found");
+      toast.error(t("EmailNotFound"));
       return;
     }
 
@@ -37,20 +40,20 @@ export default function RecoveryAccountModal({
       const result: any = await dispatch(recoverAccount(email));
 
       if (result.type.endsWith("rejected")) {
-        toast.error(result.payload?.message || "Failed to send email");
+        toast.error(result.payload?.message || t("FailedToSendEmail"));
         return;
       }
 
-      setSuccess(true); // ✅ show success UI
+      setSuccess(true);
     } catch {
-      toast.error("Something went wrong");
+      toast.error(t("SomethingWentWrong"));
     } finally {
       setLoading(false);
     }
   };
 
   const handleClose = () => {
-    setSuccess(false); // reset state
+    setSuccess(false);
     onClose();
   };
 
@@ -70,19 +73,24 @@ export default function RecoveryAccountModal({
         {!success ? (
           <>
             {/* Icon */}
-            <div className="w-14 h-14 rounded-full bg-orange-500/20 flex items-center justify-center mx-auto mb-4">
-              <Mail className="text-orange-400" size={26} />
+            <div className="w-14 h-14 rounded-full bg-red-500/20 flex items-center justify-center mx-auto mb-4">
+              <AlertTriangle className="text-red-400" size={26} />
             </div>
 
             {/* Title */}
             <h2 className="text-lg font-semibold text-center text-white mb-2">
-              Account Not Activated
+              {t("AccountDeletedTitle") || "Account Deleted"}
             </h2>
 
             {/* Description */}
-            <p className="text-sm text-center text-white/70 mb-6 leading-relaxed">
-              Your account is not activated yet.
-              We can send you an activation link to:
+            <p className="text-sm text-center text-white/70 mb-2 leading-relaxed">
+              {t("AccountDeletedDesc") ||
+                "This account has been deleted from our system."}
+            </p>
+
+            <p className="text-sm text-center text-white/70 mb-6">
+              {t("AccountRecoverHint") ||
+                "You can recover your account and continue using it."}
             </p>
 
             {/* Email */}
@@ -96,12 +104,12 @@ export default function RecoveryAccountModal({
                 onClick={handleClose}
                 className="flex-1 h-11 rounded-lg bg-white/10 border border-white/20 text-white/80 hover:bg-white/20 transition"
               >
-                Cancel
+                {t("Cancel")}
               </button>
 
               <MainButton
                 onClick={handleRecover}
-                text={"Send Link"}
+                text={t("RecoverAccount") || "Recover Account"}
                 disabled={loading}
                 className="flex-1"
               />
@@ -111,19 +119,21 @@ export default function RecoveryAccountModal({
           /* ========= AFTER SEND ========= */
           <>
             <div className="text-center">
+
               {/* Icon */}
               <div className="w-14 h-14 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-4">
-                📩
+                <MailCheck className="text-green-400" size={26} />
               </div>
 
               {/* Title */}
               <h2 className="text-lg font-semibold text-white mb-2">
-                Check Your Email
+                {t("CheckYourEmail")}
               </h2>
 
               {/* Description */}
               <p className="text-sm text-white/70 mb-4 leading-relaxed">
-                We’ve sent an activation link to:
+                {t("RecoveryEmailSent") ||
+                  "We sent a recovery link to your email"}
               </p>
 
               {/* Email */}
@@ -133,25 +143,25 @@ export default function RecoveryAccountModal({
 
               {/* Extra note */}
               <p className="text-xs text-white/50 mb-4">
-                Please check your inbox (or spam folder) and click the link to activate your account.
+                {t("CheckInboxNote")}
               </p>
 
-              {/* Open Gmail */}
+              {/* Open Email */}
               <a
                 href="https://mail.google.com"
                 target="_blank"
                 className="block text-center text-sm text-orange-400 hover:underline mb-5"
               >
-                Open Gmail
+                {t("OpenEmail") || "Open Email"}
               </a>
 
               {/* Done button */}
-              <button
-                onClick={handleClose}
-                className="w-full h-11 rounded-lg bg-orange-500 text-white hover:bg-orange-600 transition"
+              <Link
+                href={"/login"}
+                className="w-full h-11 flex items-center justify-center rounded-lg bg-orange-500 text-white hover:bg-orange-600 transition"
               >
-                Got it
-              </button>
+                {t("GoToLogin") || "Go to Login"}
+              </Link>
             </div>
           </>
         )}

@@ -90,28 +90,33 @@ export const useRegisterForm = (
     }
 
     try {
-      let resultAction;
+      const resultAction = isSeller
+        ? await dispatch(registerSeller(formData))
+        : await dispatch(registerUser(formData));
+      console.log(resultAction?.payload);
 
-      if (isSeller) {
-        resultAction = await dispatch(registerSeller(formData));
-      } else {
-        resultAction = await dispatch(registerUser(formData));
+      // 👇 THIS is the correct safe extraction
+      const data: any =
+        (resultAction as any)?.payload || (resultAction as any)?.error?.payload;
+
+      // 👇 NOW check deleted correctly
+      const isDeleted = data?.extra?.isDeleted;
+
+      if (isDeleted) {
+        setEmailForRecovery?.(data?.email ?? (formData.get("Email") as string));
+
+        setOpenRecoveryModal(true);
+        return;
       }
 
+      // reject handling
       if (resultAction.type.endsWith("rejected")) {
+        toast.error(data?.title || t("UnexpectedError"));
         return;
       }
 
       // Only auto-login for normal user
       if (!isSeller && registerUser.fulfilled.match(resultAction)) {
-        if (
-          1
-          // !resultAction.payload.isActive
-        ) {
-          setEmailForRecovery?.(data.email);
-          setOpenRecoveryModal(true);
-          return;
-        }
         const { user, token, roles } = resultAction.payload;
 
         setCookie("token", token, {

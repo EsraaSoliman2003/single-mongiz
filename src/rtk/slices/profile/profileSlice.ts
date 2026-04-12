@@ -34,6 +34,9 @@ interface ProfileState {
 
   updatePasswordLoading: boolean;
   updatePasswordError: string | null;
+
+  deleteAccountLoading: boolean;
+  deleteAccountError: string | null;
 }
 
 /* ===========================
@@ -47,6 +50,9 @@ const initialState: ProfileState = {
 
   updatePasswordLoading: false,
   updatePasswordError: null,
+
+  deleteAccountLoading: false,
+  deleteAccountError: null,
 };
 
 /* ===========================
@@ -128,6 +134,26 @@ export const updateProfileForMobile = createAsyncThunk<
   },
 );
 
+// Delete account
+export const deleteAccount = createAsyncThunk<
+  void,
+  { password: string },
+  { rejectValue: string }
+>("profile/deleteAccount", async ({ password }, thunkAPI) => {
+  try {
+    await axios.delete(`/Profile`, {
+      data: { password },
+    });
+  } catch (err) {
+    if (isAxiosError(err)) {
+      return thunkAPI.rejectWithValue(
+        err.response?.data?.title || "Failed to delete account",
+      );
+    }
+    return thunkAPI.rejectWithValue("Unexpected error occurred");
+  }
+});
+
 /* ===========================
    Slice
 =========================== */
@@ -183,6 +209,18 @@ const profileSlice = createSlice({
       .addCase(updateProfileForMobile.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload || "حدث خطأ";
+      })
+
+      .addCase(deleteAccount.pending, (state) => {
+        state.deleteAccountLoading = true;
+        state.deleteAccountError = null;
+      })
+      .addCase(deleteAccount.fulfilled, (state) => {
+        state.deleteAccountLoading = false;
+      })
+      .addCase(deleteAccount.rejected, (state, action) => {
+        state.deleteAccountLoading = false;
+        state.deleteAccountError = action.payload || "حدث خطأ";
       });
   },
 });

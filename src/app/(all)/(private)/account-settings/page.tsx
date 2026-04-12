@@ -1,6 +1,8 @@
+import { Delete } from "lucide-react"
 import ChangePassword from "./_components/ChangePassword"
 import ConfirmEmail from "./_components/ConfirmEmail"
 import SelectForm from "./_components/SelectForm"
+import DeleteAccount from "./_components/DeleteAccount"
 
 export default function Page() {
     return (
@@ -11,6 +13,8 @@ export default function Page() {
                 <ChangePassword />
 
                 <ConfirmEmail />
+
+                <DeleteAccount />
             </div>
         </div>
     )

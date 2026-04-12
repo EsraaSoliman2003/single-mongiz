@@ -211,6 +211,21 @@ export default function InfoPart({ product }: InfoPartProps) {
           </div>
         </div>
 
+        {/* Seller */}
+        <div className="flex items-center gap-2 mb-6 text-sm bg-gray-50 p-3 rounded-lg">
+          <span className="font-medium text-gray-700">{t("Seller")}:</span>
+          {product.seller ? (
+            <Link
+              href={`/products?seller=${product.seller.id}`}
+              className="text-gray-900 hover:underline flex items-center gap-1"
+            >
+              <span>{product.seller.sellerName}</span>
+            </Link>
+          ) : (
+            <span className="text-gray-900">—</span>
+          )}
+        </div>
+
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-3">
           <MainButton

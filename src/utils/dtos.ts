@@ -127,6 +127,9 @@ export interface AuthResponse {
   user: User;
   token: string;
   roles: string[];
+  extra?: {
+    isDeleted: true;
+  };
 }
 
 export interface Faqs {

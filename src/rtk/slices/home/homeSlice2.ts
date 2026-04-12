@@ -13,10 +13,11 @@ export const fetchCategoryByIdHome2 = createAsyncThunk<
     const res = await axios.get(`Category/${id}`);
     return res.data;
   } catch (err) {
-    if (isAxiosError(err))
+    if (isAxiosError(err)) {
       return thunkAPI.rejectWithValue(
         err.response?.data?.title || "Failed to load category",
       );
+    }
     return thunkAPI.rejectWithValue("Unexpected error");
   }
 });
@@ -30,10 +31,11 @@ export const fetchSubCategoriesHome2 = createAsyncThunk<
     const res = await axios.get(`/SubCategory/by-category/${categoryId}`);
     return res.data?.items || res.data || [];
   } catch (err) {
-    if (isAxiosError(err))
+    if (isAxiosError(err)) {
       return thunkAPI.rejectWithValue(
         err.response?.data?.title || "Failed to load subcategories",
       );
+    }
     return thunkAPI.rejectWithValue("Unexpected error");
   }
 });
@@ -49,10 +51,11 @@ export const fetchProductsByCategoryHome2 = createAsyncThunk<
     });
     return res.data.items || [];
   } catch (err) {
-    if (isAxiosError(err))
+    if (isAxiosError(err)) {
       return thunkAPI.rejectWithValue(
         err.response?.data?.title || "Failed to load products",
       );
+    }
     return thunkAPI.rejectWithValue("Unexpected error");
   }
 });
@@ -61,7 +64,9 @@ interface HomeState {
   category: Category | null;
   subCategories: SubCategory[];
   products: Product[];
-  loading: boolean;
+  loadingCategory: boolean;
+  loadingSubCategories: boolean;
+  loadingProducts: boolean;
   error: string | null;
 }
 
@@ -69,56 +74,60 @@ const initialState: HomeState = {
   category: null,
   subCategories: [],
   products: [],
-  loading: false,
+  loadingProducts: false,
+  loadingCategory: false,
+  loadingSubCategories: false,
   error: null,
 };
 
-const homeSlice2 = createSlice({
+const homeSlice1 = createSlice({
   name: "home2",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(fetchCategoryByIdHome2.pending, (state) => {
-        state.loading = true;
+        state.loadingCategory = true;
         state.error = null;
       })
       .addCase(fetchCategoryByIdHome2.fulfilled, (state, action) => {
         state.category = action.payload;
-        state.loading = false;
+        state.loadingCategory = false;
       })
       .addCase(fetchCategoryByIdHome2.rejected, (state, action) => {
-        state.loading = false;
+        state.loadingCategory = false;
         state.error = action.payload || "Failed to load category";
       })
 
+      // ===== SUBCATEGORIES =====
       .addCase(fetchSubCategoriesHome2.pending, (state) => {
-        state.loading = true;
+        state.loadingSubCategories = true;
         state.error = null;
       })
       .addCase(fetchSubCategoriesHome2.fulfilled, (state, action) => {
         state.subCategories = action.payload;
-        state.loading = false;
+        state.loadingSubCategories = false;
       })
       .addCase(fetchSubCategoriesHome2.rejected, (state, action) => {
-        state.loading = false;
+        state.loadingSubCategories = false;
         state.error = action.payload || "Failed to load subcategories";
       })
 
+      // ===== PRODUCTS =====
       .addCase(fetchProductsByCategoryHome2.pending, (state) => {
-        state.loading = true;
+        state.loadingProducts = true;
         state.error = null;
       })
       .addCase(fetchProductsByCategoryHome2.fulfilled, (state, action) => {
         state.products = action.payload;
-        state.loading = false;
+        state.loadingProducts = false;
       })
       .addCase(fetchProductsByCategoryHome2.rejected, (state, action) => {
-        state.loading = false;
+        state.loadingProducts = false;
         state.error = action.payload || "Failed to load products";
       });
   },
 });
 
-export const home2Reducer = homeSlice2.reducer;
-export default homeSlice2.reducer;
+export const home2Reducer = homeSlice1.reducer;
+export default homeSlice1.reducer;

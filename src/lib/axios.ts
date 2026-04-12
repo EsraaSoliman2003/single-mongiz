@@ -29,7 +29,7 @@ instance.interceptors.request.use(
 
     return config;
   },
-  (error) => Promise.reject(error)
+  (error) => Promise.reject(error),
 );
 
 // =========================
@@ -45,7 +45,9 @@ instance.interceptors.response.use(
         error.response?.data?.message ||
         "An unexpected error occurred. Please try again later.";
 
-      toast.error(message);
+      if (message != "هذا الحساب تم حذفه من النظام ") {
+        toast.error(message);
+      }
 
       if (status === 401) {
         deleteCookie("token");
@@ -58,7 +60,7 @@ instance.interceptors.response.use(
     }
 
     return Promise.reject(error);
-  }
+  },
 );
 
 export default instance;

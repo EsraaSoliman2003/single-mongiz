@@ -14,7 +14,6 @@ import {
   HiOutlineTicket,
   HiOutlineStar,
   HiOutlineClipboardList,
-  HiOutlineShoppingBag,
 } from "react-icons/hi";
 import { useTranslations } from "next-intl";
 import { useAppDispatch, useAppSelector } from "@/rtk/hooks";
@@ -83,11 +82,6 @@ export default function SidebarMenu({
       name: t("categories"),
       icon: <HiOutlineCollection className="text-xl" />,
       path: `/admin/categories`,
-    },
-    {
-      name: t("products"),
-      icon: <HiOutlineShoppingBag className="text-xl" />,
-      path: `/seller/products`,
     },
     {
       name: t("Orders"),
