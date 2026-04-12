@@ -1,0 +1,124 @@
+"use client";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { isAxiosError } from "axios";
+import axios from "@/lib/axios";
+import { Category, SubCategory, Product } from "@/utils/dtos";
+
+export const fetchCategoryByIdHome2 = createAsyncThunk<
+  Category,
+  number,
+  { rejectValue: string }
+>("home2/fetchCategory", async (id, thunkAPI) => {
+  try {
+    const res = await axios.get(`Category/${id}`);
+    return res.data;
+  } catch (err) {
+    if (isAxiosError(err))
+      return thunkAPI.rejectWithValue(
+        err.response?.data?.title || "Failed to load category",
+      );
+    return thunkAPI.rejectWithValue("Unexpected error");
+  }
+});
+
+export const fetchSubCategoriesHome2 = createAsyncThunk<
+  SubCategory[],
+  number,
+  { rejectValue: string }
+>("home2/fetchSubCategory", async (categoryId, thunkAPI) => {
+  try {
+    const res = await axios.get(`/SubCategory/by-category/${categoryId}`);
+    return res.data?.items || res.data || [];
+  } catch (err) {
+    if (isAxiosError(err))
+      return thunkAPI.rejectWithValue(
+        err.response?.data?.title || "Failed to load subcategories",
+      );
+    return thunkAPI.rejectWithValue("Unexpected error");
+  }
+});
+
+export const fetchProductsByCategoryHome2 = createAsyncThunk<
+  Product[],
+  { categoryId: number; subCategoryId?: number },
+  { rejectValue: string }
+>("home2/fetchProducts", async ({ categoryId, subCategoryId }, thunkAPI) => {
+  try {
+    const res = await axios.get(`/Product/ByCategory/${categoryId}`, {
+      params: { subCategoryId },
+    });
+    return res.data.items || [];
+  } catch (err) {
+    if (isAxiosError(err))
+      return thunkAPI.rejectWithValue(
+        err.response?.data?.title || "Failed to load products",
+      );
+    return thunkAPI.rejectWithValue("Unexpected error");
+  }
+});
+
+interface HomeState {
+  category: Category | null;
+  subCategories: SubCategory[];
+  products: Product[];
+  loading: boolean;
+  error: string | null;
+}
+
+const initialState: HomeState = {
+  category: null,
+  subCategories: [],
+  products: [],
+  loading: false,
+  error: null,
+};
+
+const homeSlice2 = createSlice({
+  name: "home2",
+  initialState,
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchCategoryByIdHome2.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchCategoryByIdHome2.fulfilled, (state, action) => {
+        state.category = action.payload;
+        state.loading = false;
+      })
+      .addCase(fetchCategoryByIdHome2.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload || "Failed to load category";
+      })
+
+      .addCase(fetchSubCategoriesHome2.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchSubCategoriesHome2.fulfilled, (state, action) => {
+        state.subCategories = action.payload;
+        state.loading = false;
+      })
+      .addCase(fetchSubCategoriesHome2.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload || "Failed to load subcategories";
+      })
+
+      .addCase(fetchProductsByCategoryHome2.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchProductsByCategoryHome2.fulfilled, (state, action) => {
+        state.products = action.payload;
+        state.loading = false;
+      })
+      .addCase(fetchProductsByCategoryHome2.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload || "Failed to load products";
+      });
+  },
+});
+
+export const home2Reducer = homeSlice2.reducer;
+export default homeSlice2.reducer;

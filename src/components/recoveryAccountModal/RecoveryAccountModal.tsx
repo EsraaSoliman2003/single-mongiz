@@ -1,0 +1,161 @@
+"use client";
+
+import React, { useState } from "react";
+import { X, Mail, Loader2 } from "lucide-react";
+import MainButton from "../MainButton/MainButton";
+import { useAppDispatch } from "@/rtk/hooks";
+import { recoverAccount } from "@/rtk/slices/auth/authSlice";
+import { toast } from "sonner";
+
+interface Props {
+  open: boolean;
+  onClose: () => void;
+  email: string;
+}
+
+export default function RecoveryAccountModal({
+  open,
+  onClose,
+  email,
+}: Props) {
+  const dispatch = useAppDispatch();
+
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+
+  if (!open) return null;
+
+  const handleRecover = async () => {
+    if (!email) {
+      toast.error("Email not found");
+      return;
+    }
+
+    try {
+      setLoading(true);
+
+      const result: any = await dispatch(recoverAccount(email));
+
+      if (result.type.endsWith("rejected")) {
+        toast.error(result.payload?.message || "Failed to send email");
+        return;
+      }
+
+      setSuccess(true); // ✅ show success UI
+    } catch {
+      toast.error("Something went wrong");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleClose = () => {
+    setSuccess(false); // reset state
+    onClose();
+  };
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
+      <div className="w-full max-w-md bg-white/10 backdrop-blur-2xl rounded-2xl p-6 shadow-[0_20px_60px_rgba(0,0,0,0.4)] border border-white/10 relative">
+
+        {/* Close */}
+        <button
+          onClick={handleClose}
+          className="absolute top-3 right-3 text-white/60 hover:text-white transition"
+        >
+          <X size={20} />
+        </button>
+
+        {/* ========= BEFORE SEND ========= */}
+        {!success ? (
+          <>
+            {/* Icon */}
+            <div className="w-14 h-14 rounded-full bg-orange-500/20 flex items-center justify-center mx-auto mb-4">
+              <Mail className="text-orange-400" size={26} />
+            </div>
+
+            {/* Title */}
+            <h2 className="text-lg font-semibold text-center text-white mb-2">
+              Account Not Activated
+            </h2>
+
+            {/* Description */}
+            <p className="text-sm text-center text-white/70 mb-6 leading-relaxed">
+              Your account is not activated yet.
+              We can send you an activation link to:
+            </p>
+
+            {/* Email */}
+            <div className="text-center text-orange-400 text-sm mb-6 break-all">
+              {email}
+            </div>
+
+            {/* Actions */}
+            <div className="flex gap-3">
+              <button
+                onClick={handleClose}
+                className="flex-1 h-11 rounded-lg bg-white/10 border border-white/20 text-white/80 hover:bg-white/20 transition"
+              >
+                Cancel
+              </button>
+
+              <MainButton
+                onClick={handleRecover}
+                text={"Send Link"}
+                disabled={loading}
+                className="flex-1"
+              />
+            </div>
+          </>
+        ) : (
+          /* ========= AFTER SEND ========= */
+          <>
+            <div className="text-center">
+              {/* Icon */}
+              <div className="w-14 h-14 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-4">
+                📩
+              </div>
+
+              {/* Title */}
+              <h2 className="text-lg font-semibold text-white mb-2">
+                Check Your Email
+              </h2>
+
+              {/* Description */}
+              <p className="text-sm text-white/70 mb-4 leading-relaxed">
+                We’ve sent an activation link to:
+              </p>
+
+              {/* Email */}
+              <div className="text-orange-400 text-sm mb-6 break-all">
+                {email}
+              </div>
+
+              {/* Extra note */}
+              <p className="text-xs text-white/50 mb-4">
+                Please check your inbox (or spam folder) and click the link to activate your account.
+              </p>
+
+              {/* Open Gmail */}
+              <a
+                href="https://mail.google.com"
+                target="_blank"
+                className="block text-center text-sm text-orange-400 hover:underline mb-5"
+              >
+                Open Gmail
+              </a>
+
+              {/* Done button */}
+              <button
+                onClick={handleClose}
+                className="w-full h-11 rounded-lg bg-orange-500 text-white hover:bg-orange-600 transition"
+              >
+                Got it
+              </button>
+            </div>
+          </>
+        )}
+      </div>
+    </div>
+  );
+}
