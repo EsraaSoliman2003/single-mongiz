@@ -152,7 +152,6 @@ interface ProductsPaginationState {
 
 export type ProductsByCategoryParams = {
   categoryId: number;
-  sellerId: number;
   subCategoryId?: number;
   minPrice?: number;
   maxPrice?: number;
@@ -515,7 +514,6 @@ export const fetchProductsByCategory = createAsyncThunk<
   try {
     const {
       categoryId = 0,
-      sellerId = user.id,
       subCategoryId = 0,
       minPrice = 0,
       maxPrice = 1000000,
@@ -541,7 +539,7 @@ export const fetchProductsByCategory = createAsyncThunk<
     if (query) params.append("query", query);
 
     const res = await axios.get<ProductsByCategoryResponse>(
-      `/Product/Seller/${sellerId}/ByCategory/${categoryId}?${params.toString()}`,
+      `/Product/ByCategory/${categoryId}?${params.toString()}`,
     );
 
     return res.data;

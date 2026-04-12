@@ -17,7 +17,7 @@ export default function Page({}: Props) {
         title={t("menuManagementTitle")}
         subtitle={t("menuManagementSubtitle")}
         buttonText={t("addProduct.title")}
-        link={'/seller/products/addproduct'}
+        link={'/admin/products/addproduct'}
       />
       {/* <MenuStats /> */}
       {/* <SearchFilterBar />

@@ -470,20 +470,6 @@ export default function Page() {
           </Link>
         </p>
 
-        {!isSeller ? (
-          <p className="text-center text-sm text-white/70 mb-6">
-            <Link href="/register?seller=true" className="text-orange-400 hover:underline">
-              {t("RegisterAsSeller")}
-            </Link>
-          </p>
-        ) : (
-          <p className="text-center text-sm text-white/70 mb-6">
-            <Link href="/register" className="text-orange-400 hover:underline">
-              {t("RegisterAsUser")}
-            </Link>
-          </p>
-        )}
-
         <Link href={"/sign-up-with-google"} className="w-full h-11 rounded-lg bg-white text-gray-800 flex items-center justify-center gap-2 font-medium cursor-pointer transition-all duration-150 hover:bg-gray-100 hover:shadow-md active:scale-[0.97]">
           <Image src={Google} alt="Google" width={28} height={28} /> {t("LoginWithGoogle")}
         </Link>

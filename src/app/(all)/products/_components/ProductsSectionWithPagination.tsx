@@ -7,7 +7,6 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { useAppDispatch, useAppSelector } from "@/rtk/hooks";
 import { fetchProductsByCategory } from '@/rtk/slices/products/productsSliceSimple';
-import VendorDetailsDemo from "./VendorDetails";
 import NoData from "@/components/noData/NoData";
 import { useSearchParams } from "next/navigation";
 import ProductCardSkeleton from "@/skeleton/ProductCardSkeleton";
@@ -80,8 +79,6 @@ export default function ProductsSectionWithPagination() {
 
   return (
     <div className="w-full h-full flex flex-col justify-between gap-15">
-      <VendorDetailsDemo />
-
       <div className="flex-1 flex flex-col justify-between">
         {/* Products */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4

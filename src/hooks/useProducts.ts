@@ -92,7 +92,6 @@ export function useProducts() {
     dispatch(
       fetchProductsByCategory({
         categoryId: categoryId,
-        sellerId: user.id,
         subCategoryId: filterValues.subCategoryId,
         brandId: filterValues.brandId,
         minPrice: filterValues.minPrice,
