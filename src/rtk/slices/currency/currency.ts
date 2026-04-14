@@ -67,11 +67,11 @@ export const fetchCurrency = createAsyncThunk<
   } catch (err) {
     if (isAxiosError(err)) {
       const message = err.response?.data?.message || "Failed to fetch currency";
-      toast.error(message);
+      // toast.error(message);
       return thunkAPI.rejectWithValue(message);
     }
 
-    toast.error("Unexpected error occurred");
+    // toast.error("Unexpected error occurred");
     return thunkAPI.rejectWithValue("Unexpected error");
   }
 });

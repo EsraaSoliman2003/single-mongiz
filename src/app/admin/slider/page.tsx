@@ -27,10 +27,6 @@ export default function SliderDisplayPage() {
     );
   }
 
-  if (sliders.length === 0) {
-    return <NoData />;
-  }
-
   return (
     <div className="p-4 md:p-8 max-w-7xl mx-auto">
       <SectionHeader
@@ -42,12 +38,16 @@ export default function SliderDisplayPage() {
 
       {/* Sliders Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-        {sliders.map((slider) => (
-          <SliderCard
-            key={slider.id}
-            slider={slider}
-          />
-        ))}
+        {sliders.length === 0
+          ? (
+            <NoData />
+          )
+          : sliders.map((slider) => (
+            <SliderCard
+              key={slider.id}
+              slider={slider}
+            />
+          ))}
       </div>
     </div>
   );
