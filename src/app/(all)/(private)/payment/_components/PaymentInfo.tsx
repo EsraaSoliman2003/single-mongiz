@@ -19,7 +19,7 @@ export default function PaymentInfo() {
     const inputClass = `
         w-full h-12 px-4 rounded-lg border-1 border-gray-200 
         bg-white transition-all duration-300 ease-out
-        focus:outline-none focus:border-orange-500 focus:shadow-md focus:shadow-orange-500/10
+        focus:outline-none focus:border-(--main-color) focus:shadow-md focus:shadow-(--main-color)/10
         hover:border-gray-300 placeholder:text-gray-400 placeholder:text-sm
     `;
 
@@ -45,7 +45,7 @@ export default function PaymentInfo() {
         <div className="lg:col-span-2 space-y-8 p-6 rounded-xl border border-gray-200">
 
             <div className="flex items-center gap-3 pb-2 border-b border-gray-100">
-                <div className="w-2 h-6 bg-orange-500 rounded-full"></div>
+                <div className="w-2 h-6 bg-(--main-color) rounded-full"></div>
                 <h2 className="text-xl font-bold text-gray-900">{t("PaymentInfo")}</h2>
             </div>
 
@@ -125,8 +125,8 @@ export default function PaymentInfo() {
                             onChange={(value) => setPhoneNumber(value)}
                             className={`
                                 PhoneInput border-2 border-gray-100 rounded-lg h-12 px-4
-                                hover:border-gray-300 focus-within:border-orange-500 
-                                focus-within:shadow-md focus-within:shadow-orange-500/10
+                                hover:border-gray-300 focus-within:border-(--main-color) 
+                                focus-within:shadow-md focus-within:shadow-(--main-color)/10
                                 transition-all duration-300
                             `}
                             inputClassName="!border-none !shadow-none !outline-none !h-auto !w-full"
@@ -160,7 +160,7 @@ export default function PaymentInfo() {
                     />
                     <div
                         className={`w-5 h-5 border-2 rounded-md flex items-center justify-center transition-all duration-300
-            ${checked ? "bg-orange-500 border-orange-500" : "border-gray-300 bg-white"}`}
+            ${checked ? "bg-(--main-color) border-(--main-color)" : "border-gray-300 bg-white"}`}
                     >
                         {checked && (
                             <svg
@@ -186,7 +186,7 @@ export default function PaymentInfo() {
                     className="
                         w-full h-32 resize-none px-4 py-3 rounded-lg border-1 border-gray-200 
                         bg-white transition-all duration-300 ease-out
-                        focus:outline-none focus:border-orange-500 focus:shadow-md focus:shadow-orange-500/10
+                        focus:outline-none focus:border-(--main-color) focus:shadow-md focus:shadow-(--main-color)/10
                         hover:border-gray-300 placeholder:text-gray-400 placeholder:text-sm
                     "
                     placeholder={t("NotesPlaceholder")}
@@ -203,7 +203,7 @@ export default function PaymentInfo() {
             <div className="pt-4 border-t border-gray-100">
                 <p className="text-sm text-gray-600 leading-relaxed">
                     {t("PrivacyTextPart1")}
-                    <span className="text-orange-500 hover:text-orange-600 cursor-pointer transition-colors font-medium">
+                    <span className="text-(--main-color) hover:text-(--main-color)/80 cursor-pointer transition-colors font-medium">
                         {" "}{t("PrivacyTextPart2")}
                     </span>
                 </p>

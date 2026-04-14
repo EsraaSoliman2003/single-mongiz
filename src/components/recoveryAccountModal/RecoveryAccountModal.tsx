@@ -94,7 +94,7 @@ export default function RecoveryAccountModal({
             </p>
 
             {/* Email */}
-            <div className="text-center text-orange-400 text-sm mb-6 break-all">
+            <div className="text-center text-main text-sm mb-6 break-all">
               {email}
             </div>
 
@@ -150,7 +150,7 @@ export default function RecoveryAccountModal({
               <a
                 href="https://mail.google.com"
                 target="_blank"
-                className="block text-center text-sm text-orange-400 hover:underline mb-5"
+                className="block text-center text-sm text-main hover:underline mb-5"
               >
                 {t("OpenEmail") || "Open Email"}
               </a>
@@ -158,7 +158,7 @@ export default function RecoveryAccountModal({
               {/* Done button */}
               <Link
                 href={"/login"}
-                className="w-full h-11 flex items-center justify-center rounded-lg bg-orange-500 text-white hover:bg-orange-600 transition"
+                className="w-full h-11 flex items-center justify-center rounded-lg bg-main text-white hover:bg-(--main-color) transition"
               >
                 {t("GoToLogin") || "Go to Login"}
               </Link>

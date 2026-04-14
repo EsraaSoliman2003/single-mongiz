@@ -87,9 +87,9 @@ export default function Page() {
         {/* Step indicator (only for sellers) */}
         {isSeller && (
           <div className="flex justify-center items-center gap-2 mb-6">
-            <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${step === 1 ? "bg-orange-500 text-white" : "bg-white/20 text-white/60"}`}>1</div>
+            <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${step === 1 ? "bg-main text-white" : "bg-white/20 text-white/60"}`}>1</div>
             <div className="w-12 h-0.5 bg-white/20"></div>
-            <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${step === 2 ? "bg-orange-500 text-white" : "bg-white/20 text-white/60"}`}>2</div>
+            <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${step === 2 ? "bg-main text-white" : "bg-white/20 text-white/60"}`}>2</div>
           </div>
         )}
 

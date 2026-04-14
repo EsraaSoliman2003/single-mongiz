@@ -38,7 +38,7 @@ const FormInput = forwardRef<HTMLInputElement, FormInputProps>(
           className={`
             w-full px-4 py-3 rounded-lg border
             text-gray-900 text-sm placeholder-gray-400
-            focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-oraring-orange-500
+            focus:outline-none focus:ring-2 focus:ring-(--main-color) focus:border-oraring-(--main-color)
             disabled:bg-gray-100 disabled:text-gray-400
             ${error ? "border-red-500" : "border-gray-300"}
             transition

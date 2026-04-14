@@ -68,7 +68,7 @@ const SubCategoryModal: React.FC<Props> = ({
           onChange={(e) => setName(e.target.value)}
           placeholder={t("name")}
           disabled={loading} // <-- disable while loading
-          className={`w-full border rounded-md px-3 py-2 mb-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 transition ${error && !name ? "border-red-500" : "border-gray-200"
+          className={`w-full border rounded-md px-3 py-2 mb-2 text-sm focus:outline-none focus:ring-2 focus:ring-(--main-color) transition ${error && !name ? "border-red-500" : "border-gray-200"
             } ${loading ? "bg-gray-100 cursor-not-allowed" : ""}`}
         />
 

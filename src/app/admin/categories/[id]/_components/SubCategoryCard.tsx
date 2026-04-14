@@ -66,8 +66,8 @@ const SubCategoryCard: React.FC<Props> = ({ id, name, categoryId, onEdit }) => {
     <div className="group relative bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 p-5">
       <div className="flex items-center gap-4">
         {/* Icon with gradient background */}
-        <div className="shrink-0 w-12 h-12 bg-linear-to-br from-orange-50 to-orange-100 rounded-lg flex items-center justify-center">
-          <IoExtensionPuzzle className="text-orange-600 w-6 h-6" />
+        <div className="shrink-0 w-12 h-12 bg-linear-to-br from-(--main-color)/10 to-(--main-color)/10 rounded-lg flex items-center justify-center">
+          <IoExtensionPuzzle className="text-(--main-color) w-6 h-6" />
         </div>
 
         {/* Name */}
@@ -81,7 +81,7 @@ const SubCategoryCard: React.FC<Props> = ({ id, name, categoryId, onEdit }) => {
         <div className="flex items-center gap-2">
           <button
             onClick={onEdit}
-            className="p-2 text-gray-500 hover:text-orange-600 hover:bg-orange-50 rounded-full transition disabled:opacity-50 disabled:cursor-not-allowed"
+            className="p-2 text-gray-500 hover:text-(--main-color) hover:bg-(--main-color)/10 rounded-full transition disabled:opacity-50 disabled:cursor-not-allowed"
             title={t("Edit")}
             disabled={isDeleting}
           >

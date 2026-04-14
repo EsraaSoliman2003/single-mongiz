@@ -55,7 +55,7 @@ export default function EmailStatusButton() {
             {/* Trigger Button */}
             <button
                 onClick={() => setModalOpen(true)}
-                className="relative bg-gradient-to-r from-red-500 to-orange-500 p-2 rounded-full shadow-md hover:shadow-lg transition duration-300"
+                className="relative bg-gradient-to-r from-red-500 to-(--main-color) p-2 rounded-full shadow-md hover:shadow-lg transition duration-300"
                 aria-label={t("Email not confirmed")}
             >
                 <Mail className="w-5 h-5 text-white" />

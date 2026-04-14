@@ -75,7 +75,7 @@ export default function ReviewsList() {
                       ${
                         review.status === "verified"
                           ? "bg-green-100 text-green-700"
-                          : "bg-orange-100 text-orange-700"
+                          : "bg-(--main-color)/10 text-main"
                       }
                     `}
                   >

@@ -43,9 +43,9 @@ const statusStyles: Record<
     dot: "bg-green-500",
   },
   processing: {
-    bg: "bg-orange-100",
-    text: "text-orange-700",
-    dot: "bg-orange-500",
+    bg: "bg-(--main-color)/10",
+    text: "text-(--main-color)",
+    dot: "bg-main",
   },
 };
 

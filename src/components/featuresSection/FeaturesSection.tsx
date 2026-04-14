@@ -20,7 +20,7 @@ const FeaturesSection = () => {
                         height={50}
                         className="transition-transform duration-200 group-hover:scale-105"
                     />
-                    <h3 className="font-bold text-lg mb-2 transition-colors group-hover:text-orange-500">
+                    <h3 className="font-bold text-lg mb-2 transition-colors group-hover:text-(--main-color)">
                         {t("support")}
                     </h3>
                     <p className="text-sm text-gray-500 leading-relaxed max-w-45">
@@ -38,7 +38,7 @@ const FeaturesSection = () => {
                         height={50}
                         className="transition-transform duration-200 group-hover:scale-105"
                     />
-                    <h3 className="font-bold text-lg mb-2 transition-colors group-hover:text-orange-500">
+                    <h3 className="font-bold text-lg mb-2 transition-colors group-hover:text-(--main-color)">
                         {t("cashback")}
                     </h3>
                     <p className="text-sm text-gray-500 leading-relaxed max-w-45">
@@ -56,7 +56,7 @@ const FeaturesSection = () => {
                         height={50}
                         className="transition-transform duration-200 group-hover:scale-105"
                     />
-                    <h3 className="font-bold text-lg mb-2 transition-colors group-hover:text-orange-500">
+                    <h3 className="font-bold text-lg mb-2 transition-colors group-hover:text-(--main-color)">
                         {t("delivery")}
                     </h3>
                     <p className="text-sm text-gray-500 leading-relaxed max-w-24">

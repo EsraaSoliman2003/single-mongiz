@@ -56,7 +56,7 @@ export default function AddToCartPopup({ open, onClose }: Props) {
                     {/* Buy Now */}
                     <button
                         onClick={() => router.push("/cart")}
-                        className="w-full py-3 rounded-lg bg-orange-500 text-white font-medium hover:bg-orange-600 transition flex items-center justify-center gap-2"
+                        className="w-full py-3 rounded-lg bg-main text-white font-medium hover:bg-(--main-color) transition flex items-center justify-center gap-2"
                     >
                         <ShoppingBag size={18} />
                         {t("goToCart")}

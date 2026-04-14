@@ -96,7 +96,7 @@ export default function ReviewsPart({ productId, reviewsSummary, reviews }: Revi
                 </div>
                 <div className="flex-1 h-2 bg-[#F5F7FA] rounded-full overflow-hidden">
                   <div
-                    className="h-full bg-orange-500 rounded-full"
+                    className="h-full bg-main rounded-full"
                     style={{ width: `${percentage}%` }}
                   />
                 </div>

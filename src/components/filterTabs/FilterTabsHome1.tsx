@@ -77,7 +77,7 @@ const FilterTabs = () => {
                   <SwiperSlide key={item.id} className="!w-auto flex-shrink-0">
                     <button
                       onClick={() => handleChangeSubCategory(item.id)}
-                      className="relative pb-2 px-3 text-md text-gray-500 transition whitespace-nowrap hover:text-orange-500"
+                      className="relative pb-2 px-3 text-md text-gray-500 transition whitespace-nowrap hover:text-(--main-color)"
                     >
                       {item.name}
                     </button>

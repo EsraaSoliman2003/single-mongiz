@@ -215,7 +215,7 @@ export default function InfoPart({ product }: InfoPartProps) {
         <div className="flex flex-col sm:flex-row gap-3">
           <MainButton
             text={t("AddToCart")}
-            className="flex-1 py-3.5 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-200 disabled:bg-gray-300 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+            className="flex-1 py-3.5 bg-main hover:bg-(--main-color) text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-200 disabled:bg-gray-300 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-(--main-color) focus:ring-offset-2"
             onClick={handleAddToCart}
             icon={<ShoppingBag size={18} className="mr-2" />}
             disabled={isOutOfStock}

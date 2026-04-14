@@ -28,7 +28,7 @@ export default function SearchFilterBar() {
         <input
           type="text"
           placeholder={t("searchMenuPlaceholder")}
-          className="w-full rounded-xl py-3 pr-10 pl-4 text-sm bg-white focus:border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-200 transition-all"
+          className="w-full rounded-xl py-3 pr-10 pl-4 text-sm bg-white focus:border-orange-400 focus:outline-none focus:ring-2 focus:ring-(--main-color)/10 transition-all"
         />
       </div>
     </div>

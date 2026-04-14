@@ -98,7 +98,7 @@ export default function Page() {
 
         {/* Email preview */}
         {email && (
-          <div className="text-center text-sm text-orange-400 mb-6 break-all">
+          <div className="text-center text-sm text-main mb-6 break-all">
             {atob(email)}
           </div>
         )}
@@ -111,7 +111,7 @@ export default function Page() {
         <button
           onClick={handleRecover}
           disabled={loading}
-          className="w-full py-3 bg-orange-500 hover:bg-orange-600 transition rounded-lg font-medium"
+          className="w-full py-3 bg-main hover:bg-(--main-color) transition rounded-lg font-medium"
         >
           {loading ? t("Processing") : t("Recover Account")}
         </button>

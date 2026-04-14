@@ -60,9 +60,8 @@ const CategoriesSection = () => {
 
         <div className="flex items-center gap-3">
           <Link href={"/products"}
-            className="text-sm text-orange-500 px-2 py-1 rounded-md transition-all duration-200
-                       hover:bg-orange-50 hover:text-orange-600
-                       active:bg-orange-100 active:scale-95"
+            className="text-sm text-main px-2 py-1 rounded-md transition-all duration-200
+                       hover:bg-(--main-color)/30 hover:text-(--main-color) active:scale-95"
           >
             {t("ViewAll")}
           </Link>
@@ -136,8 +135,8 @@ const CategoriesSection = () => {
                         flex flex-col items-center justify-center gap-3
                         rounded-md border cursor-pointer transition
                         ${isActive
-                        ? "border-orange-400 bg-orange-50"
-                        : "border-gray-200 hover:border-orange-300"
+                        ? "border-(--main-color) bg-(--main-color)/30"
+                        : "border-gray-200 hover:border-(--main-color)"
                       }
                 `}
                   >

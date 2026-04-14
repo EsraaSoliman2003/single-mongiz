@@ -70,7 +70,7 @@ export default function CheckEmailPage() {
                     {/* Back */}
                     <Link
                         href="/forgot-password"
-                        className="block text-sm text-orange-400 hover:underline"
+                        className="block text-sm text-main hover:underline"
                     >
                         {t("Back")}
                     </Link>
@@ -81,7 +81,7 @@ export default function CheckEmailPage() {
                     {t("Didn't receive the email?")}{" "}
                     <Link
                         href="/forgot-password/step-1"
-                        className="text-orange-400 hover:underline"
+                        className="text-main hover:underline"
                     >
                         {t("Try again")}
                     </Link>

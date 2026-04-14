@@ -78,7 +78,7 @@ function InputField({
         className="
           w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3
           text-sm text-gray-700 outline-none mt-1
-          focus:border-main focus:ring-2 focus:ring-orange-200
+          focus:border-main focus:ring-2 focus:ring-(--main-color)/10
           transition-all duration-300
         "
       />

@@ -181,7 +181,7 @@ const BannerEditForm = () => {
                   ) : (
                     <label
                       htmlFor={`image-upload-${idx}`}
-                      className="flex flex-col items-center justify-center w-full h-full cursor-pointer hover:bg-orange-50 transition-colors"
+                      className="flex flex-col items-center justify-center w-full h-full cursor-pointer hover:bg-(--main-color)/30 transition-colors"
                     >
                       <FiUpload className="text-3xl text-gray-400 mb-2" />
                       <span className="text-sm text-gray-600">{t("Upload image")}</span>

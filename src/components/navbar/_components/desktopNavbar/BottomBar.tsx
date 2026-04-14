@@ -24,7 +24,7 @@ export default function BottomBar({ }: Props) {
         <div className="flex items-center gap-8">
           {/* Categories */}
           <div className="relative">
-            <div className="flex items-center gap-2 cursor-pointer px-2 rounded-lg transition-all duration-300 group-hover:text-orange-600">
+            <div className="flex items-center gap-2 cursor-pointer px-2 rounded-lg transition-all duration-300 group-hover:text-(--main-color)">
               <CategoriesMegaMenu />
             </div>
           </div>
@@ -33,15 +33,15 @@ export default function BottomBar({ }: Props) {
         <div className="flex gap-2 items-center">
           {/* Links */}
           <Link href={"/"}>
-            <span className="cursor-pointer py-1 px-2 rounded-lg transition-all duration-300 hover:text-orange-600 active:scale-95">
+            <span className="cursor-pointer py-1 px-2 rounded-lg transition-all duration-300 hover:text-(--main-color) active:scale-95">
               {t("Home")}
             </span>
           </Link>
 
           <div className="relative group">
-            <Link href={"/products"} className="flex items-center gap-2 cursor-pointer py-2 px-3 rounded-lg transition-all duration-300 group-hover:text-orange-600">
+            <Link href={"/products"} className="flex items-center gap-2 cursor-pointer py-2 px-3 rounded-lg transition-all duration-300 group-hover:text-(--main-color)">
               <span>{t("NewProducts")}</span>
-              <span className="bg-linear-to-r from-orange-500 to-red-500 text-white text-[10px] px-2 py-0.5 rounded-full font-semibold shadow-sm transition-all duration-300 group-hover:scale-110 group-hover:shadow-md">
+              <span className="bg-linear-to-r from-(--main-color) to-red-500 text-white text-[10px] px-2 py-0.5 rounded-full font-semibold shadow-sm transition-all duration-300 group-hover:scale-110 group-hover:shadow-md">
                 {t("Hot")}
               </span>
             </Link>
@@ -54,7 +54,7 @@ export default function BottomBar({ }: Props) {
           {token ? (
             <div className="relative group">
               {/* Trigger */}
-              <div className="flex items-center gap-2 cursor-pointer py-2 px-3 rounded-lg transition-all duration-300 group-hover:text-orange-600">
+              <div className="flex items-center gap-2 cursor-pointer py-2 px-3 rounded-lg transition-all duration-300 group-hover:text-(--main-color)">
                 <div className="relative w-5 h-5">
                   <Image
                     src={User}
@@ -62,7 +62,7 @@ export default function BottomBar({ }: Props) {
                     fill
                     className="object-contain mt-1 transition-transform duration-300 group-hover:scale-110"
                   />
-                  <div className="absolute w-5 h-6 bg-orange-500/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute w-5 h-6 bg-main/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
                 <span>{t("myAccount")}</span>
               </div>
@@ -114,7 +114,7 @@ export default function BottomBar({ }: Props) {
           ) : (
             <div className="relative group">
               <Link href={"/login"}>
-                <div className="flex items-center gap-2 cursor-pointer py-2 px-3 rounded-lg transition-all duration-300 group-hover:text-orange-600">
+                <div className="flex items-center gap-2 cursor-pointer py-2 px-3 rounded-lg transition-all duration-300 group-hover:text-(--main-color)">
                   <div className="relative w-5 h-5">
                     <Image
                       src={User}
@@ -122,7 +122,7 @@ export default function BottomBar({ }: Props) {
                       fill
                       className="object-contain mt-1 transition-transform duration-300 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-orange-500/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-main/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
                   <span>{t("LoginRegister")}</span>
                 </div>
@@ -133,7 +133,7 @@ export default function BottomBar({ }: Props) {
           {/* Track Order */}
           <div className="relative group">
             <Link href={token ? "/orders" : "/login"}>
-              <div className="flex items-center gap-2 cursor-pointer py-2 px-3 rounded-lg transition-all duration-300 group-hover:text-orange-600">
+              <div className="flex items-center gap-2 cursor-pointer py-2 px-3 rounded-lg transition-all duration-300 group-hover:text-(--main-color)">
                 <div className="relative w-5 h-5">
                   <Image
                     src={Car}

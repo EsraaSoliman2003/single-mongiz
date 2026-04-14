@@ -51,7 +51,7 @@ const CreateBrandForm = () => {
               className="
                 w-full px-4 py-3 rounded-lg
                 text-gray-900 text-sm placeholder-gray-400
-                focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500
+                focus:outline-none focus:ring-2 focus:ring-(--main-color) focus:border-(--main-color)
                 disabled:bg-gray-100 disabled:text-gray-400
                 transition bg-white
               "

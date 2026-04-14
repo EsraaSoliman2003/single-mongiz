@@ -17,11 +17,11 @@ const StatCard = ({
   value,
   label,
   valueClassName = "text-gray-800",
-  iconBgColor = "bg-orange-100",
-  iconColor = "text-orange-600",
+  iconBgColor = "bg-(--main-color)/10",
+  iconColor = "text-(--main-color)",
 }: StatCardProps) => {
   return (
-    <div className="group bg-white rounded-xl p-5 hover:shadow-lg transition-all duration-300 flex items-center gap-4 border border-transparent hover:border-orange-100">
+    <div className="group bg-white rounded-xl p-5 hover:shadow-lg transition-all duration-300 flex items-center gap-4 border border-transparent hover:border-(--main-color)/10">
       <div
         className={`w-12 h-12 rounded-xl ${iconBgColor} flex items-center justify-center ${iconColor} text-xl transition-transform`}
       >

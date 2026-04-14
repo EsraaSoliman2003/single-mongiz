@@ -22,7 +22,7 @@ export default function ProductItem({ name, description, price }: ProductItemPro
         p-3 sm:p-4 
         transition-all duration-300 
         border border-gray-100 
-        hover:border-orange-200
+        hover:border-(--main-color)/10
         gap-3
       "
     >
@@ -47,7 +47,7 @@ export default function ProductItem({ name, description, price }: ProductItemPro
             {description}
           </p>
 
-          <p className="text-sm sm:text-base font-bold text-orange-500 mt-2">
+          <p className="text-sm sm:text-base font-bold text-main mt-2">
             {price}
           </p>
         </div>

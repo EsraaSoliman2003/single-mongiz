@@ -44,7 +44,7 @@ export default function OrdersFilterBar() {
           placeholder={t("searchOrderPlaceholder")}
           className="w-full bg-gray-50 rounded-xl py-2 pr-12 pl-4 text-sm text-gray-700 outline-none
           border border-gray-200
-          focus:border-main focus:ring-2 focus:ring-orange-200
+          focus:border-main focus:ring-2 focus:ring-(--main-color)/10
           transition-all duration-300"
         />
       </div>

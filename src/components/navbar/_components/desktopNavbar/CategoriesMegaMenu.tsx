@@ -28,7 +28,7 @@ export default function CategoriesDrawer() {
                     height={20}
                     className="transition-transform duration-200 group-hover:scale-110"
                 />
-                <span className="font-medium text-gray-700 group-hover:text-orange-600 transition-colors duration-200">
+                <span className="font-medium text-gray-700 group-hover:text-(--main-color) transition-colors duration-200">
                     {t("Categories")}
                 </span>
                 <Image
@@ -54,9 +54,9 @@ export default function CategoriesDrawer() {
                                         key={cat.name}
                                         href={`/products?category=${cat.id}`}
                                         onClick={() => setOpen(false)}
-                                        className="px-4 py-2.5 cursor-pointer flex justify-between items-center transition-all duration-200 hover:bg-orange-50 group"
+                                        className="px-4 py-2.5 cursor-pointer flex justify-between items-center transition-all duration-200 hover:bg-(--main-color)/30 group"
                                     >
-                                        <span className="text-gray-700 group-hover:text-orange-600 font-medium text-sm">
+                                        <span className="text-gray-700 group-hover:text-(--main-color) font-medium text-sm">
                                             {cat.name}
                                         </span>
                                         <Image

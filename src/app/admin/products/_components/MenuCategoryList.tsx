@@ -23,7 +23,7 @@ export default function CategorySection({ title, itemsCount }: CategorySectionPr
           </p>
         </div>
 
-        <button className="flex items-center text-sm text-gray-500 hover:text-orange-500 transition-colors group cursor-pointer">
+        <button className="flex items-center text-sm text-gray-500 hover:text-(--main-color) transition-colors group cursor-pointer">
           <span>{t("viewAll")}</span>
           {
             t("dir") === "rtl"

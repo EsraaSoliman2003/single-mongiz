@@ -60,7 +60,7 @@ export default function ProductPage() {
               <button
                 key={item}
                 onClick={() => setTab(item as typeof tab)}
-                className={`pb-2 transition-colors duration-200 ${isActive ? "text-orange-600" : "text-gray-500 hover:text-gray-800"
+                className={`pb-2 transition-colors duration-200 ${isActive ? "text-main" : "text-gray-500 hover:text-gray-800"
                   }`}
               >
                 {t(item.charAt(0).toUpperCase() + item.slice(1))}
@@ -70,7 +70,7 @@ export default function ProductPage() {
 
           {/* Animated Indicator */}
           <motion.div
-            className="absolute bottom-0 h-0.5 bg-orange-500"
+            className="absolute bottom-0 h-0.5 bg-main"
             layoutId="tab-indicator"
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
             style={{

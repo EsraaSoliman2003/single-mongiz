@@ -154,7 +154,7 @@ export default function ImagesPart({ product, images }: Props) {
                 setActiveIndex(index);
               }}
               className={`relative aspect-square rounded-lg overflow-hidden border-2 transition-all ${activeIndex === index
-                  ? "border-orange-500 ring-2 ring-orange-200"
+                  ? "border-(--main-color) ring-2 ring-(--main-color)/10"
                   : "border-transparent hover:border-gray-300"
                 }`}
             >

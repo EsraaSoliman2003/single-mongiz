@@ -123,7 +123,7 @@ export default function ProductsSectionWithPagination() {
                 key={page}
                 onClick={() => goToPage(page)}
                 className={`flex items-center justify-center w-8 h-8 rounded-md border font-semibold cursor-pointer ${currentPage === page
-                  ? "bg-orange-500 text-white border-orange-500"
+                  ? "bg-main text-white border-(--main-color)"
                   : "border-gray-300 text-[#858585] hover:bg-gray-100"
                   } transition`}
               >

@@ -56,11 +56,11 @@ const MiddleBar = ({ locale }: { locale: string }) => {
         {/* Cart */}
         <Link
           href={"/cart"}
-          className="relative cursor-pointer hover:opacity-80 transition text-gray-600 hover:text-orange-600"
+          className="relative cursor-pointer hover:opacity-80 transition text-gray-600 hover:text-(--main-color)"
         >
           <ShoppingCart size={22} />
           {items.length > 0 && (
-            <span className="absolute -top-2 -right-2 bg-orange-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-semibold shadow-sm">
+            <span className="absolute -top-2 -right-2 bg-(--main-color) text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-semibold shadow-sm">
               {items.length}
             </span>
           )}
