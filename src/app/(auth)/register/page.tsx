@@ -103,7 +103,7 @@ export default function Page() {
                 type="text"
                 placeholder={t("FullNamePlaceholder")}
                 {...register("fullName")}
-                className="w-full h-11 px-4 rounded-lg bg-white/10 border border-white/10 placeholder:text-white/50 text-white outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-400/30 transition-colors duration-300"
+                className="w-full h-11 px-4 rounded-lg bg-white/10 border border-white/10 placeholder:text-white/50 text-white outline-none focus:border-(--main-color) focus:ring-2 focus:ring-(--main-color)/30 transition-colors duration-300"
               />
               {errors.fullName && (
                 <p className="text-red-500 text-xs mt-1">{errors.fullName.message}</p>
@@ -138,7 +138,7 @@ export default function Page() {
                 type="email"
                 placeholder={t("EmailPlaceholder")}
                 {...register("email")}
-                className="w-full h-11 px-4 rounded-lg bg-white/10 border border-white/10 placeholder:text-white/50 text-white outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-400/30 transition-colors duration-300"
+                className="w-full h-11 px-4 rounded-lg bg-white/10 border border-white/10 placeholder:text-white/50 text-white outline-none focus:border-(--main-color) focus:ring-2 focus:ring-(--main-color)/30 transition-colors duration-300"
               />
               {errors.email && (
                 <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>
@@ -153,7 +153,7 @@ export default function Page() {
                   type={showPassword ? "text" : "password"}
                   placeholder={t("PasswordPlaceholder")}
                   {...register("password")}
-                  className="w-full h-11 px-4 rounded-lg bg-white/10 border border-white/10 placeholder:text-white/50 text-white outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-400/30 transition-colors duration-300"
+                  className="w-full h-11 px-4 rounded-lg bg-white/10 border border-white/10 placeholder:text-white/50 text-white outline-none focus:border-(--main-color) focus:ring-2 focus:ring-(--main-color)/30 transition-colors duration-300"
                 />
                 <button
                   type="button"
@@ -176,7 +176,7 @@ export default function Page() {
                   type={showConfirmPassword ? "text" : "password"}
                   placeholder={t("ConfirmPasswordPlaceholder")}
                   {...register("confirmPassword")}
-                  className="w-full h-11 px-4 rounded-lg bg-white/10 border border-white/10 placeholder:text-white/50 text-white outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-400/30 transition-colors duration-300"
+                  className="w-full h-11 px-4 rounded-lg bg-white/10 border border-white/10 placeholder:text-white/50 text-white outline-none focus:border-(--main-color) focus:ring-2 focus:ring-(--main-color)/30 transition-colors duration-300"
                 />
                 <button
                   type="button"
@@ -217,7 +217,7 @@ export default function Page() {
               {/* Seller Profile Image */}
               <div className="mb-5">
                 <label className="block text-sm mb-3 text-white/80 flex items-center gap-2">
-                  <ImageIcon size={16} className="text-orange-400" />
+                  <ImageIcon size={16} className="text-(--main-color)" />
                   صورة البروفايل <span className="text-red-400">*</span>
                 </label>
                 <div className="flex items-center gap-4">
@@ -252,7 +252,7 @@ export default function Page() {
                       onClick={() => profileFileRef.current?.click()}
                       className="w-full h-11 px-4 rounded-lg bg-white/10 border border-white/10 text-white/80 hover:bg-white/20 transition-colors duration-300 flex items-center justify-center gap-2"
                     >
-                      <Upload size={18} className="text-orange-400" />
+                      <Upload size={18} className="text-(--main-color)" />
                       <span>اختر صورة البروفايل</span>
                     </button>
                   </div>
@@ -265,14 +265,14 @@ export default function Page() {
               {/* Address */}
               <div className="mb-5">
                 <label className="block text-sm mb-3 text-white/80 flex items-center gap-2">
-                  <MapPin size={16} className="text-orange-400" />
+                  <MapPin size={16} className="text-(--main-color)" />
                   العنوان <span className="text-red-400">*</span>
                 </label>
                 <input
                   type="text"
                   placeholder="ادخل عنوان المتجر بالكامل"
                   {...register("address")}
-                  className="w-full h-11 px-4 rounded-lg bg-white/10 border border-white/10 placeholder:text-white/50 text-white outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-400/30 transition-colors duration-300"
+                  className="w-full h-11 px-4 rounded-lg bg-white/10 border border-white/10 placeholder:text-white/50 text-white outline-none focus:border-(--main-color) focus:ring-2 focus:ring-(--main-color)/30 transition-colors duration-300"
                 />
                 {errors.address && (
                   <p className="text-red-500 text-xs mt-1">{errors.address.message}</p>
@@ -282,7 +282,7 @@ export default function Page() {
               {/* Commercial Register Image */}
               <div className="mb-5">
                 <label className="block text-sm mb-3 text-white/80 flex items-center gap-2">
-                  <ImageIcon size={16} className="text-orange-400" />
+                  <ImageIcon size={16} className="text-(--main-color)" />
                   صورة السجل التجاري <span className="text-red-400">*</span>
                 </label>
                 <div className="flex items-center gap-4">
@@ -317,7 +317,7 @@ export default function Page() {
                       onClick={() => commercialFileRef.current?.click()}
                       className="w-full h-11 px-4 rounded-lg bg-white/10 border border-white/10 text-white/80 hover:bg-white/20 transition-colors duration-300 flex items-center justify-center gap-2"
                     >
-                      <Upload size={18} className="text-orange-400" />
+                      <Upload size={18} className="text-(--main-color)" />
                       <span>اختر صورة</span>
                     </button>
                     {commercialImagePreview && (
@@ -344,14 +344,14 @@ export default function Page() {
               {/* Commercial Register Text */}
               <div className="mb-5">
                 <label className="block text-sm mb-3 text-white/80 flex items-center gap-2">
-                  <FileText size={16} className="text-orange-400" />
+                  <FileText size={16} className="text-(--main-color)" />
                   نص السجل التجاري <span className="text-red-400">*</span>
                 </label>
                 <input
                   type="text"
                   placeholder="رقم السجل التجاري أو النص الظاهر"
                   {...register("commercialRegisterText")}
-                  className="w-full h-11 px-4 rounded-lg bg-white/10 border border-white/10 placeholder:text-white/50 text-white outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-400/30 transition-colors duration-300"
+                  className="w-full h-11 px-4 rounded-lg bg-white/10 border border-white/10 placeholder:text-white/50 text-white outline-none focus:border-(--main-color) focus:ring-2 focus:ring-(--main-color)/30 transition-colors duration-300"
                 />
                 {errors.commercialRegisterText && (
                   <p className="text-red-500 text-xs mt-1">{errors.commercialRegisterText.message}</p>
@@ -361,7 +361,7 @@ export default function Page() {
               {/* Tax Card Image */}
               <div className="mb-5">
                 <label className="block text-sm mb-3 text-white/80 flex items-center gap-2">
-                  <CreditCard size={16} className="text-orange-400" />
+                  <CreditCard size={16} className="text-(--main-color)" />
                   صورة بطاقة الضريبة <span className="text-red-400">*</span>
                 </label>
                 <div className="flex items-center gap-4">
@@ -396,7 +396,7 @@ export default function Page() {
                       onClick={() => taxFileRef.current?.click()}
                       className="w-full h-11 px-4 rounded-lg bg-white/10 border border-white/10 text-white/80 hover:bg-white/20 transition-colors duration-300 flex items-center justify-center gap-2"
                     >
-                      <Upload size={18} className="text-orange-400" />
+                      <Upload size={18} className="text-(--main-color)" />
                       <span>اختر صورة</span>
                     </button>
                     {taxImagePreview && (
@@ -423,14 +423,14 @@ export default function Page() {
               {/* Tax Card Text */}
               <div className="mb-8">
                 <label className="block text-sm mb-3 text-white/80 flex items-center gap-2">
-                  <Hash size={16} className="text-orange-400" />
+                  <Hash size={16} className="text-(--main-color)" />
                   نص بطاقة الضريبة <span className="text-red-400">*</span>
                 </label>
                 <input
                   type="text"
                   placeholder="الرقم الضريبي أو النص الظاهر"
                   {...register("taxCardText")}
-                  className="w-full h-11 px-4 rounded-lg bg-white/10 border border-white/10 placeholder:text-white/50 text-white outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-400/30 transition-colors duration-300"
+                  className="w-full h-11 px-4 rounded-lg bg-white/10 border border-white/10 placeholder:text-white/50 text-white outline-none focus:border-(--main-color) focus:ring-2 focus:ring-(--main-color)/30 transition-colors duration-300"
                 />
                 {errors.taxCardText && (
                   <p className="text-red-500 text-xs mt-1">{errors.taxCardText.message}</p>
@@ -465,7 +465,7 @@ export default function Page() {
         {/* Footer links (unchanged) */}
         <p className="text-center text-sm text-white/70 mb-2">
           {t("HaveAccount")}{" "}
-          <Link href="/login" className="text-orange-400 hover:underline">
+          <Link href="/login" className="text-(--main-color) hover:underline">
             {t("LoginNow")}
           </Link>
         </p>

@@ -137,7 +137,7 @@ export default function RecoveryAccountModal({
               </p>
 
               {/* Email */}
-              <div className="text-orange-400 text-sm mb-6 break-all">
+              <div className="text-(--main-color) text-sm mb-6 break-all">
                 {email}
               </div>
 

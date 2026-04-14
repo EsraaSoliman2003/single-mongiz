@@ -143,7 +143,7 @@ export default function ConfirmEmailPage() {
         {/* Login link */}
         <p className="text-center text-sm text-white/70 mt-6">
           {t("Already verified?")}{" "}
-          <Link href="/login" className="text-orange-400 hover:underline">
+          <Link href="/login" className="text-(--main-color) hover:underline">
             {t("Go to Login")}
           </Link>
         </p>

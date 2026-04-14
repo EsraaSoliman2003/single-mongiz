@@ -40,11 +40,11 @@ const Footer = () => {
                             </li>
                             <li className="flex items-center gap-3 justify-center md:justify-start">
                                 <Phone size={18} />
-                                <span className="text-orange-400">01234484855</span>
+                                <span className="text-(--main-color)">01234484855</span>
                             </li>
                             <li className="flex items-center gap-3 justify-center md:justify-start">
                                 <Mail size={18} />
-                                <span className="text-orange-400">admin@ftribe.com</span>
+                                <span className="text-(--main-color)">admin@ftribe.com</span>
                             </li>
                         </ul>
                     </div>
@@ -55,13 +55,13 @@ const Footer = () => {
                             {t("Cooperation - Association")}
                         </h4>
                         <ul className="space-y-4 text-sm">
-                            <li className="hover:text-orange-400 cursor-pointer">
+                            <li className="hover:text-(--main-color) cursor-pointer">
                                 {t("European Currency Exchange Operating Regulations")}
                             </li>
-                            <li className="hover:text-orange-400 cursor-pointer">
+                            <li className="hover:text-(--main-color) cursor-pointer">
                                 {t("Advertising Policy")}
                             </li>
-                            <li className="hover:text-orange-400 cursor-pointer">
+                            <li className="hover:text-(--main-color) cursor-pointer">
                                 {t("Privacy Policy")}
                             </li>
                         </ul>
@@ -72,19 +72,19 @@ const Footer = () => {
                         <h4 className="font-bold mb-6 text-white text-sm">{t("Customer Support")}</h4>
                         <ul className="space-y-4 text-sm">
                             <li>{t("Hotline Customer Service")}</li>
-                            <li className="text-orange-400 font-medium">
+                            <li className="text-(--main-color) font-medium">
                                 212 929 9953
                             </li>
-                            <li className="hover:text-orange-400 cursor-pointer">
+                            <li className="hover:text-(--main-color) cursor-pointer">
                                 {t("FAQ")}
                             </li>
-                            <li className="hover:text-orange-400 cursor-pointer">
+                            <li className="hover:text-(--main-color) cursor-pointer">
                                 {t("Submit a Support Request")}
                             </li>
-                            <li className="hover:text-orange-400 cursor-pointer">
+                            <li className="hover:text-(--main-color) cursor-pointer">
                                 {t("Order Guide")}
                             </li>
-                            <li className="hover:text-orange-400 cursor-pointer">
+                            <li className="hover:text-(--main-color) cursor-pointer">
                                 {t("Shipping Methods")}
                             </li>
                         </ul>
@@ -96,19 +96,19 @@ const Footer = () => {
                             {t("Buying & Installment Guide")}
                         </h4>
                         <ul className="space-y-4 text-sm">
-                            <li className="hover:text-orange-400 cursor-pointer">
+                            <li className="hover:text-(--main-color) cursor-pointer">
                                 {t("Exchange Policy")}
                             </li>
-                            <li className="hover:text-orange-400 cursor-pointer">
+                            <li className="hover:text-(--main-color) cursor-pointer">
                                 {t("Customer Service")}
                                 <br />
-                                <span className="text-orange-400">customers@ftribe.com</span>
+                                <span className="text-(--main-color)">customers@ftribe.com</span>
 
                             </li>
-                            <li className="hover:text-orange-400 cursor-pointer">
+                            <li className="hover:text-(--main-color) cursor-pointer">
                                 {t("Technical Issue Reports")}
                                 <br />
-                                <span className="text-orange-400">admin@ftribe.com</span>
+                                <span className="text-(--main-color)">admin@ftribe.com</span>
 
                             </li>
                         </ul>

@@ -91,7 +91,7 @@ export default function Page() {
               bg-white/10 border border-white/10
               placeholder:text-white/50 text-white
               outline-none
-              focus:border-orange-400 focus:ring-2 focus:ring-orange-400/30
+              focus:border-(--main-color) focus:ring-2 focus:ring-(--main-color)/30
               transition-colors duration-300 ease-in-out
             "
           />

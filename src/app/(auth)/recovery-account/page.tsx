@@ -119,7 +119,7 @@ export default function Page() {
         {/* Extra help */}
         <p className="text-center text-xs text-white/50 mt-6">
           {t("Need help?")}{" "}
-          <Link href="/contact" className="text-orange-400 hover:underline">
+          <Link href="/contact" className="text-(--main-color) hover:underline">
             {t("Contact support")}
           </Link>
         </p>
