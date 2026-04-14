@@ -57,7 +57,7 @@ export default function Page() {
               type="email"
               placeholder={t("EmailPlaceholder")}
               {...register("email")}
-              className="w-full h-11 px-4 rounded-lg bg-white/10 border border-white/10 placeholder:text-white/50 text-white outline-none focus:border-(--main-color) focus:ring-2 focus:ring-(--main-color)/30 transition-colors duration-300"
+              className="w-full h-11 px-4 rounded-lg bg-white/10 border border-white/10 placeholder:text-white/50 text-white outline-none focus:border-(--main-color) focus:ring-2 focus:ring-(--main-color)/10 transition-colors duration-300"
             />
             {errors.email && (
               <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>
@@ -83,7 +83,7 @@ export default function Page() {
                 type={showPassword ? "text" : "password"}
                 placeholder={t("PasswordPlaceholder")}
                 {...register("password")}
-                className="w-full h-11 px-4 rounded-lg bg-white/10 border border-white/10 placeholder:text-white/50 text-white outline-none focus:border-(--main-color) focus:ring-2 focus:ring-(--main-color)/30 transition-colors duration-300"
+                className="w-full h-11 px-4 rounded-lg bg-white/10 border border-white/10 placeholder:text-white/50 text-white outline-none focus:border-(--main-color) focus:ring-2 focus:ring-(--main-color)/10 transition-colors duration-300"
               />
               <button
                 type="button"

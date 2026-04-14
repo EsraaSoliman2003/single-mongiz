@@ -71,7 +71,7 @@ const FormImageUpload = forwardRef<HTMLInputElement, FormImageUploadProps>(
     // Base container classes
     const containerClasses = `
       relative rounded-lg border-2 border-dashed transition-all duration-200
-      ${disabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer hover:border-(--main-color) hover:bg-(--main-color)/30"}
+      ${disabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer hover:border-(--main-color) hover:bg-(--main-color)/10"}
       ${error ? "border-red-300 bg-red-50" : "border-gray-300"}
       ${square ? "aspect-square w-full" : "w-full"}
       ${className}
