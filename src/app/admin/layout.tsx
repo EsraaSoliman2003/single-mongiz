@@ -56,7 +56,7 @@ export default function ProtectedAdminLayout({ children }: { children: React.Rea
     <main className="relative min-h-screen flex font-Expo">
       <div className="absolute inset-0 -z-10 bg-[#F6F8F8]" />
       <Sidebar />
-      <section className="relative grow z-10">
+      <section className="relative grow z-10 mb-30 lg:mb-0">
         <div className="absolute w-full h-[242px] md:h-[349px] bg-cover bg-center z-[-20]" />
         <section className="mt-15 md:mt-13 lg:mt-0">{children}</section>
       </section>
