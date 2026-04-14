@@ -34,7 +34,7 @@ export default function QuickActions() {
     const t = useTranslations();
 
     return (
-        <div className="bg-white rounded-2xl p-6">
+        <div className="bg-white rounded-2xl p-6 hidden lg:block">
             <div className="flex items-center justify-between mb-6">
                 <h2 className="text-lg font-bold text-gray-800 flex items-center gap-2">
                     <BsLightningChargeFill className="text-yellow-500 text-2xl animate-pulse" />
