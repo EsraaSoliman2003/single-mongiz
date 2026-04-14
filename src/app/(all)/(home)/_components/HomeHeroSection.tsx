@@ -9,7 +9,7 @@ export default function HomeHeroSection() {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        // dispatch(fetchBanners());
+        dispatch(fetchBanners());
         dispatch(fetchSlider());
     }, [dispatch]);
 
