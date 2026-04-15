@@ -55,10 +55,15 @@ export default function SidebarMenu({
       path: "/admin",
     },
     {
-      name: t("Logo"),
-      icon: <Image className="text-xl" />,
-      path: "/admin/logo",
+      name: t("settings"),
+      icon: <HiOutlineCog className="text-xl" />,
+      path: "/admin/settings",
     },
+    // {
+    //   name: t("Logo"),
+    //   icon: <Image className="text-xl" />,
+    //   path: "/admin/logo",
+    // },
     {
       name: t("Slider"),
       icon: <HiOutlinePhotograph className="text-xl" />,
@@ -133,11 +138,6 @@ export default function SidebarMenu({
       name: t("Support"),
       icon: <HiOutlineSupport className="text-xl" />,
       path: "/admin/support",
-    },
-    {
-      name: t("settings"),
-      icon: <HiOutlineCog className="text-xl" />,
-      path: "/admin/settings",
     },
   ];
 
