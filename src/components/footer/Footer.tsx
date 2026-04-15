@@ -10,7 +10,7 @@ const Footer = () => {
     const { logo, loading } = useAppSelector((s) => s.logo)
 
     return (
-        <footer className={`bg-[#0F1220] text-[#B7B9C6] text-center ${t("dir") === "rtl" ? "md:text-right" : "md:text-left"}`}>
+        <footer className={`bg-dark text-[#B7B9C6] text-center ${t("dir") === "rtl" ? "md:text-right" : "md:text-left"}`}>
             <div className="container py-16 px-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 items-start">
 

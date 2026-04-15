@@ -123,7 +123,7 @@ export default function CategoriesFilter() {
                   : ""
               }`}
             >
-              <span className="text-dark text-sm">
+              <span className="text-[#161727] text-sm">
                 {category.name}
               </span>
 

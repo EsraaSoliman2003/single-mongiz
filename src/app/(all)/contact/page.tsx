@@ -136,7 +136,7 @@ export default function Page() {
                 onChange={(e) =>
                   setForm({ ...form, email: e.target.value })
                 }
-                className="w-full bg-gray-100 rounded-full px-6 py-4 outline-none transition-shadow focus:ring-2 focus:ring-dark/20"
+                className="w-full bg-gray-100 rounded-full px-6 py-4 outline-none transition-shadow focus:ring-2 focus:ring-(--dark-color)/20"
               />
 
               <input
@@ -147,7 +147,7 @@ export default function Page() {
                 onChange={(e) =>
                   setForm({ ...form, phoneNumber: e.target.value })
                 }
-                className="w-full bg-gray-100 rounded-full px-6 py-4 outline-none transition-shadow focus:ring-2 focus:ring-dark/20"
+                className="w-full bg-gray-100 rounded-full px-6 py-4 outline-none transition-shadow focus:ring-2 focus:ring-(--dark-color)/20"
               />
             </div>
 
@@ -160,7 +160,7 @@ export default function Page() {
               onChange={(e) =>
                 setForm({ ...form, fullName: e.target.value })
               }
-              className="w-full bg-gray-100 rounded-full px-6 py-4 outline-none transition-shadow focus:ring-2 focus:ring-dark/20"
+              className="w-full bg-gray-100 rounded-full px-6 py-4 outline-none transition-shadow focus:ring-2 focus:ring-(--dark-color)/20"
             />
 
             {/* Message */}
@@ -172,7 +172,7 @@ export default function Page() {
               onChange={(e) =>
                 setForm({ ...form, message: e.target.value })
               }
-              className="w-full bg-gray-100 rounded-3xl px-6 py-5 outline-none resize-none transition-shadow focus:ring-2 focus:ring-dark/20"
+              className="w-full bg-gray-100 rounded-3xl px-6 py-5 outline-none resize-none transition-shadow focus:ring-2 focus:ring-(--dark-color)/20"
             />
 
             {/* Button */}

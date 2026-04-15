@@ -99,7 +99,7 @@ const WriteReview = ({ productId }: Props) => {
             <div className="flex items-center gap-3 mt-6 font-semibold text-sm">
               <button
                 type="button"
-                className="h-11.5 flex-1 bg-main text-white hover:bg-main-dark transition-colors disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-main shadow-md hover:shadow-lg"
+                className="h-11.5 flex-1 bg-main text-white hover:bg-main-(--dark-color) transition-colors disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-main shadow-md hover:shadow-lg"
                 onClick={onSend}
                 disabled={addReviewLoading || !canSend}
               >
@@ -126,7 +126,7 @@ const WriteReview = ({ productId }: Props) => {
       {/* Trigger Button */}
       <button
         type="button"
-        className="text-main font-semibold underline hover:text-main-dark transition-colors"
+        className="text-main font-semibold underline hover:text-main-(--dark-color) transition-colors"
         onClick={() => {
           token ? setOpen(true) : push("/login");
         }}

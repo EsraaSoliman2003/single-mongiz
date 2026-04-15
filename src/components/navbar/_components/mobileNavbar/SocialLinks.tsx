@@ -14,7 +14,7 @@ export const SocialLinks = () => {
 
   return (
     <div className="p-4">
-      <h3 className="font-semibold text-dark mb-3 text-sm tracking-wide">
+      <h3 className="font-semibold text-black mb-3 text-sm tracking-wide">
         {t("FollowUs")}
       </h3>
 

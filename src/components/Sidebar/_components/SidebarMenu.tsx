@@ -134,11 +134,11 @@ export default function SidebarMenu({
       icon: <HiOutlineSupport className="text-xl" />,
       path: "/admin/support",
     },
-    // {
-    //   name: t("settings"),
-    //   icon: <HiOutlineCog className="text-xl" />,
-    //   path: "/admin/settings",
-    // },
+    {
+      name: t("settings"),
+      icon: <HiOutlineCog className="text-xl" />,
+      path: "/admin/settings",
+    },
   ];
 
 

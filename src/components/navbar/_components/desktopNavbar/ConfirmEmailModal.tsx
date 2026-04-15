@@ -81,7 +81,7 @@ export default function ConfirmEmailModal({ setModalOpen, userEmail, cooldown, l
           </div>
           <button
             onClick={() => setModalOpen(false)}
-            className="text-dark hover:text-gray-500 transition-colors"
+            className="text-black hover:text-gray-500 transition-colors"
             aria-label={t("Close")}
           >
             <X className="w-5 h-5" />

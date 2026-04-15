@@ -180,31 +180,11 @@ const MobileSidebar = ({ isOpen, onClose, locale }: MobileSidebarProps) => {
             {/* Always visible sections */}
             <SocialLinks />
 
-            {!activeCategory && !showCurrencySelector && (
-              < div className="px-4 pb-2">
-                <button
-                  onClick={openCurrencySelector}
-                  className="w-full py-3 px-4 rounded-md
-                  bg-gray-100 text-gray-800
-                  hover:bg-gray-200 active:scale-95
-                  transition-all duration-200
-                  flex items-center justify-between
-                  text-sm font-semibold"
-                >
-                  <span className="flex items-center gap-2">
-                    <Coins size={16} className="text-main" />
-                    {t("Currency")} ({t(selectedCurrency || "USD")})
-                  </span>
-                  <ChevronLeft size={14} className="text-gray-500" />
-                </button>
-              </div>
-            )}
             
             <div className="mt-6 px-4 flex flex-col gap-3 mb-15">
               {[
                 { code: "ar", label: "العربية" },
                 { code: "en", label: "English" },
-                { code: "zh", label: "中文" }
               ].map((lang) => (
                 <button
                   key={lang.code}
