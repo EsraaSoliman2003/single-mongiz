@@ -54,16 +54,16 @@ export default function SidebarMenu({
       icon: <HiHome className="text-xl" />,
       path: "/admin",
     },
-    {
-      name: t("settings"),
-      icon: <HiOutlineCog className="text-xl" />,
-      path: "/admin/settings",
-    },
     // {
-    //   name: t("Logo"),
-    //   icon: <Image className="text-xl" />,
-    //   path: "/admin/logo",
+    //   name: t("settings"),
+    //   icon: <HiOutlineCog className="text-xl" />,
+    //   path: "/admin/settings",
     // },
+    {
+      name: t("Logo"),
+      icon: <Image className="text-xl" />,
+      path: "/admin/logo",
+    },
     {
       name: t("Slider"),
       icon: <HiOutlinePhotograph className="text-xl" />,
