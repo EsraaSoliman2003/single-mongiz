@@ -3,7 +3,7 @@ import { GoogleOAuthProvider } from "@react-oauth/google";
 
 export default function App({ Component, pageProps }: AppProps) {
     return (
-        <GoogleOAuthProvider clientId="147350394688-9n2a47jbigec3rq5td0a465l8deuijp6.apps.googleusercontent.com">
+        <GoogleOAuthProvider clientId="330318666546-k0psclgibv67m0op7o2f5b1m2jrfcmsj.apps.googleusercontent.com">
             <Component {...pageProps} />
         </GoogleOAuthProvider>
     );
