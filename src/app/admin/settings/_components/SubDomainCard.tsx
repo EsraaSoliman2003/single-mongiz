@@ -14,7 +14,7 @@ export default function SubDomainCard() {
   const handleSave = async () => {
     if (!subdomain.trim()) return;
     setLoading(true);
-    await new Promise(resolve => setTimeout(resolve, 800));
+    // await new Promise(resolve => setTimeout(resolve, 800));
     console.log({ subdomain });
     setLoading(false);
   };
